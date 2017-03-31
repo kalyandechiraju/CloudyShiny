@@ -7,4 +7,5 @@ target 'CloudyShiny' do
 
   # Pods for CloudyShiny
   pod 'Alamofire', '~> 4.4'
+  pod 'SwiftyJSON'
 end

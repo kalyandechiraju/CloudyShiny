@@ -11,4 +11,4 @@ import Foundation
 
 typealias DownloadComplete = () -> ()
 
-let APP_ID = "XXX"
+let APP_ID = "045f199687aff609296e3fffb6d77bc9"
