@@ -13,6 +13,8 @@
 		8DCB07371E8CDF510047FAC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DCB07351E8CDF510047FAC5 /* Main.storyboard */; };
 		8DCB07391E8CDF510047FAC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DCB07381E8CDF510047FAC5 /* Assets.xcassets */; };
 		8DCB073C1E8CDF510047FAC5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DCB073A1E8CDF510047FAC5 /* LaunchScreen.storyboard */; };
+		8DCB07441E8E5EC00047FAC5 /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCB07431E8E5EC00047FAC5 /* CurrentWeather.swift */; };
+		8DCB07461E8E75420047FAC5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCB07451E8E75420047FAC5 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		8DCB07381E8CDF510047FAC5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8DCB073B1E8CDF510047FAC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8DCB073D1E8CDF510047FAC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8DCB07431E8E5EC00047FAC5 /* CurrentWeather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
+		8DCB07451E8E75420047FAC5 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A06E0CF4DB5D8233AAE05D5E /* Pods-CloudyShiny.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CloudyShiny.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CloudyShiny/Pods-CloudyShiny.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -76,6 +80,8 @@
 				8DCB07381E8CDF510047FAC5 /* Assets.xcassets */,
 				8DCB073A1E8CDF510047FAC5 /* LaunchScreen.storyboard */,
 				8DCB073D1E8CDF510047FAC5 /* Info.plist */,
+				8DCB07431E8E5EC00047FAC5 /* CurrentWeather.swift */,
+				8DCB07451E8E75420047FAC5 /* Constants.swift */,
 			);
 			path = CloudyShiny;
 			sourceTree = "<group>";
@@ -212,7 +218,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DCB07341E8CDF510047FAC5 /* WeatherViewController.swift in Sources */,
+				8DCB07441E8E5EC00047FAC5 /* CurrentWeather.swift in Sources */,
 				8DCB07321E8CDF510047FAC5 /* AppDelegate.swift in Sources */,
+				8DCB07461E8E75420047FAC5 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
