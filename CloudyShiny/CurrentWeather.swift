@@ -8,12 +8,13 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
 
 class CurrentWeather {
-    var _cityName: String!
-    var _date: String!
-    var _weatherType: String!
-    var _currentTemp: Double!
+    private var _cityName: String!
+    private var _date: String!
+    private var _weatherType: String!
+    private var _currentTemp: Double!
     
     var cityName: String {
         if _cityName == nil {
@@ -49,20 +50,33 @@ class CurrentWeather {
         return _currentTemp
     }
     
-    func downloadWeatherData(completed: DownloadComplete) {
-        let weatherURL = URL(string: "http://api.openweathermap.org/data/2.5/weather?q=bangalore&appid=\(APP_ID)")
+    func downloadWeatherData(completed: @escaping DownloadComplete) {
+        print("location: \(Location.sharedInstance.latitude) \(Location.sharedInstance.longitude)")
+        let weatherURL = URL(string: "http://api.openweathermap.org/data/2.5/weather?lat=\(Location.sharedInstance.latitude!)&lon=\(Location.sharedInstance.longitude!)&appid=\(APP_ID)")
         Alamofire.request(weatherURL!).responseJSON { response in
             let result = response.result
-            if let dict = result.value as? Dictionary<String, AnyObject> {
-                if let name = dict["name"] as? String {
-                    self._cityName = name.capitalized
+            if let value = result.value {
+                let data = JSON(value)
+                if let name = data["name"].string {
+                    self._cityName = name
                 }
-                
-//                if let weather = dict["weather"]?[0]?["main"] as? String {
-//                    self._weatherType = weather
-//                }
+                if let weather = data["weather"].array?[0]["main"].string {
+                    self._weatherType = weather
+                }
+                if let temperature = data["main"]["temp"].double {
+                    self._currentTemp = temperature - 273.15
+                }
             }
+            completed()
+//            if let dict = result.value as? Dictionary<String, AnyObject> {
+//                if let name = dict["name"] as? String {
+//                    self._cityName = name.capitalized
+//                }
+//                
+////                if let weather = dict["weather"]?[0]?["main"] as? String {
+////                    self._weatherType = weather
+////                }
+//            }
         }
-        completed()
     }
 }
